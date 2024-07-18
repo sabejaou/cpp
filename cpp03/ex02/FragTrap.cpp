@@ -9,6 +9,24 @@ FragTrap::FragTrap( std::string name ) : ClapTrap(name)
     std::cout << "FragTrap " << this->name << " spawned !" << std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap &cpy) : ClapTrap(cpy.name)
+{
+    this->hp = cpy.hp;
+    this->ep = cpy.ep;
+    this->dmg = cpy.dmg;
+
+    std::cout << "FragTrap " << this->name << " spawned by copying " << cpy.name << " !"<< std::endl;
+}
+
+FragTrap& FragTrap::operator=( const FragTrap &inst )
+{
+    this->name = inst.name;
+    this->hp = inst.hp;
+    this->ep = inst.ep;
+    this->dmg = inst.dmg;
+    return (*this);
+}
+
 FragTrap::~FragTrap() {
     std::cout << "FragTrap " << this->name << " have been destroyed" << std::endl;
 }

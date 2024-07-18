@@ -9,6 +9,24 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
     std::cout << "ScavTrap " << this->name << " spawned !" << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap &cpy) : ClapTrap(cpy.name)
+{
+    this->hp = cpy.hp;
+    this->ep = cpy.ep;
+    this->dmg = cpy.dmg;
+
+    std::cout << "ScavTrap " << this->name << " spawned by copying " << cpy.name << " !"<< std::endl;
+}
+
+ScavTrap& ScavTrap::operator=( const ScavTrap &inst )
+{
+    this->name = inst.name;
+    this->hp = inst.hp;
+    this->ep = inst.ep;
+    this->dmg = inst.dmg;
+    return (*this);
+}
+
 ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap " << this->name << " have been destroyed" << std::endl;
 }
