@@ -6,7 +6,7 @@
 /*   By: sabejaou <sabejaou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 16:12:09 by sabejaou          #+#    #+#             */
-/*   Updated: 2024/07/01 20:57:02 by sabejaou         ###   ########.fr       */
+/*   Updated: 2024/07/19 16:01:16 by sabejaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <cstdlib>
 
 #include "user.class.hpp"
 

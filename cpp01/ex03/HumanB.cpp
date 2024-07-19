@@ -13,16 +13,9 @@ HumanB::~HumanB(void)
     return ;
 }
 
-// HumanB::HumanB(const HumanB &cpy)
-// {
-//     HumanB::name = cpy.name;
-//     HumanB::weapon = cpy.weapon;
-//     return ;
-// }
-
 HumanB & HumanB::operator=(const HumanB &inst)
 {
-    HumanB *a = new HumanB(inst.name);
+    HumanB *a = new HumanB(inst.name.c_str());
     a->weapon = inst.weapon;
     return (*a);
 }

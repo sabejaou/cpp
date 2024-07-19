@@ -9,7 +9,7 @@ Fixed::Fixed( const int n ) : _fixed( n << _maxbits ) {
     std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( const float n ) : _fixed( std::roundf( n * ( 1 << _maxbits ) ) ) {
+Fixed::Fixed( const float n ) : _fixed( roundf( n * ( 1 << _maxbits ) ) ) {
     std::cout << "Float constructor called" << std::endl;
 }
 

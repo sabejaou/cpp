@@ -14,7 +14,7 @@ Weapon::~Weapon(void)
 
 Weapon::Weapon(const Weapon &cpy)
 {
-    Weapon::type = cpy.type;
+    Weapon::type = cpy.type.c_str();
     return ;
 }
 

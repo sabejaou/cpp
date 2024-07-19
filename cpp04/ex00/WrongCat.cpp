@@ -6,6 +6,14 @@ WrongCat::WrongCat() : WrongAnimal()
     std::cout << "WrongCat" << " spawned !" << std::endl;
 }
 
+WrongCat::WrongCat( const WrongCat &cpy ) {
+    this->type = cpy.type;
+}
+
+WrongCat& WrongCat::operator=( const WrongCat &inst ) {
+    return *this;
+}
+
 WrongCat::~WrongCat() {
     std::cout << "WrongCat" << " died" << std::endl;
 }

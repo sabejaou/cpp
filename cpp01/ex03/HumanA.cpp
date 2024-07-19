@@ -13,16 +13,9 @@ HumanA::~HumanA(void)
     return ;
 }
 
-// HumanA::HumanA(const HumanA &cpy)
-// {
-//     HumanA::name = cpy.name;
-//     HumanA::weapon = cpy.weapon;
-//     return ;
-// }
-
 HumanA & HumanA::operator=(HumanA &inst)
 {
-    HumanA *a = new HumanA(inst.name, *inst.weapon);
+    HumanA *a = new HumanA(inst.name.c_str(), *inst.weapon);
     return (*a);
 }
 

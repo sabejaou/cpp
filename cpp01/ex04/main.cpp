@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
+#include <cstdlib>
 
 bool isthesame(std::string reading, char *occurence)
 {
@@ -26,13 +28,12 @@ int main(int ac, char **av)
     size_t              i = 0;
     size_t              j = 0;
 
-    og_file.
     og_file.open(av[1], og_file.in);
 
     if (og_file.rdstate() == og_file.failbit)
         return (dprintf(2, "ERROR : \"%s\" can't be opened\n", av[1]), 1);
-
-    new_file.open(new_name + ".replace", new_file.out);
+    new_name += ".replace";
+    new_file.open(new_name.c_str(), new_file.out);
     if (new_file.rdstate() == new_file.failbit)
         return (dprintf(2, "ERROR : \"%s\" can't be opened\n", (new_name + ".replace").c_str()), 1);
 
@@ -40,7 +41,7 @@ int main(int ac, char **av)
     j = og_file.tellg();
     og_file.seekg(0, og_file.beg);
 
-    char                buff[j];
+    char                *buff = (char *)std::malloc(j);
     og_file.read(buff, j);
     buff[j] = '\0';
     new_name = buff;
@@ -52,7 +53,7 @@ int main(int ac, char **av)
             if (isthesame(&new_name[i], av[2]))
             {
                 new_file << av[3];
-                i += strlen(av[2]);
+                i += std::strlen(av[2]);
             }
             else
                 new_file << new_name[i++];

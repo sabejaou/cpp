@@ -1,5 +1,7 @@
 #include "phonebook.class.hpp"
 #include "user.class.hpp"
+#include <cstdio>
+#include <limits>
 
 bool    isthesame(const char *s1, std::string s2)
 {
@@ -30,6 +32,11 @@ int main()
             break;
         else
             std::cout << "Invalid command" << std::endl;
+        if (!std::cin)
+        {
+            std::cout << "std::cin closed, exiting..." << std::endl;
+            break;
+        }
     }
     return (0);
 }

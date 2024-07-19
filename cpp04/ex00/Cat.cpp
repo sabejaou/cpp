@@ -6,6 +6,14 @@ Cat::Cat() : Animal()
     std::cout << "Cat" << " spawned !" << std::endl;
 }
 
+Cat::Cat( const Cat &cpy ) {
+    this->type = cpy.type;
+}
+
+Cat& Cat::operator=( const Cat &inst ) {
+    return *this;
+}
+
 Cat::~Cat() {
     std::cout << "Cat" << " died" << std::endl;
 }

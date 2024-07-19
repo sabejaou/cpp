@@ -20,10 +20,8 @@ Zombie::Zombie(const Zombie &cpy)
 
 Zombie & Zombie::operator=(const Zombie &inst)
 {
-    (void)inst;
-    Zombie *a = NULL;
-    a->name = inst.name;
-    return (*a);
+    this->name = inst.name;
+    return (*this);
 }
 
 void    Zombie::announce(void)

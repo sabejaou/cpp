@@ -7,7 +7,7 @@ Fixed::Fixed() {
 Fixed::Fixed( const int n ) : _fixed( n << _maxbits ) {
 }
 
-Fixed::Fixed( const float n ) : _fixed( std::roundf( n * ( 1 << _maxbits ) ) ) {
+Fixed::Fixed( const float n ) : _fixed( roundf( n * ( 1 << _maxbits ) ) ) {
 }
 
 Fixed::Fixed( const Fixed &cpy ) {

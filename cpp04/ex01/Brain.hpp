@@ -3,9 +3,8 @@
 #include <iostream>
 
 class Brain {
-    private:
-        std::string ideas[100];
     public:
+        std::string ideas[100];
         Brain();
         Brain& operator=( const Brain &inst );
         Brain(std::string name);
