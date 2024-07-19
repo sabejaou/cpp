@@ -35,7 +35,7 @@ int main()
         if (!std::cin)
         {
             std::cout << "std::cin closed, exiting..." << std::endl;
-            break;
+            return (-2);
         }
     }
     return (0);
