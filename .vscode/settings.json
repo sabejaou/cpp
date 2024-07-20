@@ -108,6 +108,8 @@
 	"stdexcept": "cpp",
 	"streambuf": "cpp",
 	"cinttypes": "cpp",
-	"typeinfo": "cpp"
-}
+	"typeinfo": "cpp",
+	"scalarconverter.hpp": "c"
+},
+"C_Cpp.errorSquiggles": "disabled"
 }
