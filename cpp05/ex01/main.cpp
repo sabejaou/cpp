@@ -34,5 +34,7 @@ int main(int ac, char **av)
 	std::cout << *a;
 	if (a)
 		delete a;
+	if (b)
+		delete b;
 	return (0);
 }
