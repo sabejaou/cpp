@@ -14,6 +14,22 @@ Bureaucrat::Bureaucrat(int grade, std::string name){
 		delete this;
 }
 
+void	Bureaucrat::signForm(Form & form)
+{
+	try {
+		 form.beSigned(*this);
+	}
+	catch (Form::GradeTooLowException())
+	{
+		std::cout << "Execution by " << this->name << " of " << form.getName() << " impossible: ";
+		throw GradeTooLowException();
+	}
+	catch (Form::FormAlreadySignedException)
+	{
+		throw Form::FormAlreadySignedException();
+	}
+}
+
 Bureaucrat::Bureaucrat( const Bureaucrat &cpy ) {
     this->name = cpy.name.c_str();
 	this->grade = cpy.grade;

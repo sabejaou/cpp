@@ -23,14 +23,6 @@ class AForm{
 		virtual void execute(Bureaucrat const & exec) const;
 		std::string getTarget() const;
 
-		class GradeTooHighException{
-			public:
-				GradeTooHighException(){msg = "Grade too high exception occurs";};
-				~GradeTooHighException(){};
-				std::string getMessage(){return (msg);};
-			private:
-				std::string msg;
-		};
 		class GradeTooLowException{
 		public:
 			GradeTooLowException(){msg = "Grade too low exception occurs";};
@@ -41,8 +33,16 @@ class AForm{
 		};
 		class FormNotSignedException{
 		public:
-			FormNotSignedException(){msg = "Form is not signed can't be executed";};
+			FormNotSignedException(){msg = "Form is not signed, can't be executed";};
 			~FormNotSignedException(){};
+			std::string getMessage(){return (msg);};
+		private:
+			std::string msg;
+		};
+		class FormAlreadySignedException{
+		public:
+			FormAlreadySignedException(){msg = "Form is already signed, can't be signed";};
+			~FormAlreadySignedException(){};
 			std::string getMessage(){return (msg);};
 		private:
 			std::string msg;

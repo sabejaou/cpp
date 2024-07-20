@@ -74,6 +74,11 @@ bool AForm::getSigned() const
 
 void AForm::beSigned(Bureaucrat &inst)
 {
+	if (this->isSigned)
+	{
+		std::cout << "Signature by " << inst.getName() << " of Aform " << this->name << " impossible: ";
+		throw (FormAlreadySignedException());
+	}
 	if (inst.getGrade() <= this->getGradeSign())
 	{
 		this->isSigned = 1;

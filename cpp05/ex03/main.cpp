@@ -27,9 +27,19 @@ int main()
 	b = new Bureaucrat(30, "Paul");
 	std::cout << *a;
 	try{
-		a->beSigned(*b);
+		b->signForm(*a);
 	}
 	catch (AForm::GradeTooLowException& e)
+	{
+		std::cout << e.getMessage() << std::endl;
+		return (1);
+	}
+	catch (AForm::FormNotSignedException& e)
+	{
+		std::cout << e.getMessage() << std::endl;
+		return (1);
+	}
+		catch (AForm::FormAlreadySignedException& e)
 	{
 		std::cout << e.getMessage() << std::endl;
 		return (1);

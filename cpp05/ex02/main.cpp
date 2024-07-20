@@ -13,11 +13,6 @@ int main()
 	try {
 		a = new PresidentialPardonForm("John");
 	}
-	catch (AForm::GradeTooHighException& e)
-	{
-		std::cout << e.getMessage() << std::endl;
-		return (1);
-	}
 	catch (AForm::GradeTooLowException& e)
 	{
 		std::cout << e.getMessage() << std::endl;
@@ -29,6 +24,11 @@ int main()
 		a->beSigned(*b);
 	}
 	catch (AForm::GradeTooLowException& e)
+	{
+		std::cout << e.getMessage() << std::endl;
+		return (1);
+	}
+	catch (AForm::FormAlreadySignedException& e)
 	{
 		std::cout << e.getMessage() << std::endl;
 		return (1);

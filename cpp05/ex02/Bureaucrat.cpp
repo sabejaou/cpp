@@ -23,6 +23,26 @@ Bureaucrat::Bureaucrat( const Bureaucrat &cpy ) {
 	std::cout << "Bureaucrat Spawned by copy!" << std::endl;
 }
 
+void	Bureaucrat::signForm(AForm & form)
+{
+	try {
+		 form.beSigned(*this);
+	}
+	catch (AForm::GradeTooLowException())
+	{
+		std::cout << "Execution by " << this->name << " of " << form.getName() << " impossible: ";
+		throw GradeTooLowException();
+	}
+	catch (AForm::FormNotSignedException)
+	{
+		throw AForm::FormNotSignedException();
+	}
+	catch (AForm::FormAlreadySignedException)
+	{
+		throw AForm::FormAlreadySignedException();
+	}
+}
+
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat &inst ) {
 	this->name = inst.name.c_str();
 	this->grade = inst.grade;

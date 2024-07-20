@@ -20,6 +20,22 @@ class Form{
 		bool	getSigned() const;
 		void 	beSigned(Bureaucrat &inst);
 
+		class GradeTooLowException{
+		public:
+			GradeTooLowException(){msg = "Grade too low exception occurs";};
+			~GradeTooLowException(){};
+			std::string getMessage(){return (msg);};
+		private:
+			std::string msg;
+		};
+		class FormAlreadySignedException{
+		public:
+			FormAlreadySignedException(){msg = "Form is already signed, can't be signed";};
+			~FormAlreadySignedException(){};
+			std::string getMessage(){return (msg);};
+		private:
+			std::string msg;
+		};
 		class GradeTooHighException{
 			public:
 				GradeTooHighException(){msg = "Grade too high exception occurs";};
@@ -28,13 +44,5 @@ class Form{
 			private:
 				std::string msg;
 		};
-		class GradeTooLowException{
-		public:
-			GradeTooLowException(){msg = "Grade too low exception occurs";};
-			~GradeTooLowException(){};
-			std::string getMessage(){return (msg);};
-		private:
-			std::string msg;
-		};	
 	friend std::ostream & operator<<(std::ostream & o, Form const & i );
 };

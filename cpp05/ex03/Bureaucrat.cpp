@@ -51,7 +51,7 @@ void	Bureaucrat::executeForm(AForm const & form)
 	}
 }
 
-void	Bureaucrat::signForm(Aform const & form)
+void	Bureaucrat::signForm(AForm & form)
 {
 	try {
 		 form.beSigned(*this);
@@ -64,6 +64,10 @@ void	Bureaucrat::signForm(Aform const & form)
 	catch (AForm::FormNotSignedException)
 	{
 		throw AForm::FormNotSignedException();
+	}
+	catch (AForm::FormAlreadySignedException)
+	{
+		throw AForm::FormAlreadySignedException();
 	}
 }
 
