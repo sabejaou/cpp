@@ -14,11 +14,13 @@ Bureaucrat::Bureaucrat(int grade, std::string name){
 	}
 	else
 		delete this;
+	std::cout << "Bureaucrat Spawned !" << std::endl;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat &cpy ) {
     this->name = cpy.name.c_str();
 	this->grade = cpy.grade;
+	std::cout << "Bureaucrat Spawned by copy!" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat &inst ) {

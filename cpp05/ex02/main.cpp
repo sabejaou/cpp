@@ -1,6 +1,8 @@
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include <cstdlib>
 
@@ -9,7 +11,7 @@ int main()
 	AForm *a;
 	Bureaucrat *b;
 	try {
-		a = new ShrubberyCreationForm("John");
+		a = new PresidentialPardonForm("John");
 	}
 	catch (AForm::GradeTooHighException& e)
 	{
@@ -21,7 +23,7 @@ int main()
 		std::cout << e.getMessage() << std::endl;
 		return (1);
 	}
-	b = new Bureaucrat(140, "Paul");
+	b = new Bureaucrat(30, "Paul");
 	std::cout << *a;
 	try{
 		a->beSigned(*b);

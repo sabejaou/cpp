@@ -4,10 +4,12 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm(145, 137, "ShrubberyCreationForm"){
     	this->target = target.c_str();
+		std::cout << "ShrubberyCreatForm Spawned!" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &cpy ) : AForm(145, 137, "ShrubberyCreationForm"){
     this->target = cpy.target.c_str();
+	std::cout << "ShrubberyCreatForm Spawned by copy!" << std::endl;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=( const ShrubberyCreationForm &inst ) {

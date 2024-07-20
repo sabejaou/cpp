@@ -21,6 +21,7 @@ AForm::AForm(int signGrade, int exGrade, std::string name){
 	}
 	else
 		delete this;
+	std::cout << "Aform Spawned !" << std::endl;
 }
 
 std::string AForm::getTarget() const
@@ -34,6 +35,7 @@ AForm::AForm( const AForm &cpy ) {
 	this->signGrade = cpy.signGrade;
 	this->exGrade = cpy.exGrade;
 	this->isSigned = 0;
+	std::cout << "Aform Spawned by copy!" << std::endl;
 }
 
 AForm& AForm::operator=( const AForm &inst ) {
