@@ -2,6 +2,11 @@
 #include "AForm.hpp"
 #include <cmath>
 
+RobotomyRequestForm::RobotomyRequestForm(): AForm(72, 45, "RobotomyRequestForm"){
+	this->target = "Default Target";
+	std::cout << "RobotRequestForm Spawned !" << std::endl;
+};
+
 RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm(72, 45, "RobotomyRequestForm"){
     	this->target = target.c_str();
 		std::cout << "RobotRequestForm Spawned !" << std::endl;

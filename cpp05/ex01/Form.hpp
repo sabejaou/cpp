@@ -10,6 +10,7 @@ class Form{
 		int		exGrade;
 		bool	isSigned;
     public:
+		Form::Form();
         Form(int signGrade, int exGrade, std::string name);
         Form(const Form &cpy);
         Form& operator=( const Form &inst );
@@ -44,5 +45,5 @@ class Form{
 			private:
 				std::string msg;
 		};
-	friend std::ostream & operator<<(std::ostream & o, Form const & i );
 };
+std::ostream & operator<<(std::ostream & o, Form const & i );

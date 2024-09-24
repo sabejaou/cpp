@@ -1,5 +1,13 @@
 #include "Form.hpp"
 
+
+Form::Form(){
+	this->name = "default";
+	this->signGrade = 150;
+	this->exGrade = 150;
+	this->isSigned = 0;
+}
+
 Form::Form(int signGrade, int exGrade, std::string name){
 	if (signGrade > 150 || exGrade > 150)
 	{

@@ -11,6 +11,7 @@ class AForm{
 		int		exGrade;
 		bool	isSigned;
         AForm(int signGrade, int exGrade, std::string name);
+		AForm();
         AForm(const AForm &cpy);
         AForm& operator=( const AForm &inst );
     public:
@@ -20,9 +21,16 @@ class AForm{
 		int		getGradeEx() const;
 		bool	getSigned() const;
 		void 	beSigned(class Bureaucrat &inst);
-		virtual void execute(Bureaucrat const & exec) const;
+		virtual void execute(Bureaucrat const & exec) const = 0;
 		std::string getTarget() const;
-
+		class GradeTooHighException{
+			public:
+				GradeTooHighException(){msg = "Grade too high exception occurs";};
+				~GradeTooHighException(){};
+				std::string getMessage(){return (msg);};
+			private:
+				std::string msg;
+		};
 		class GradeTooLowException{
 		public:
 			GradeTooLowException(){msg = "Grade too low exception occurs";};
@@ -47,5 +55,5 @@ class AForm{
 		private:
 			std::string msg;
 		};	
-	friend std::ostream & operator<<(std::ostream & o, AForm const & i );
 };
+std::ostream & operator<<(std::ostream & o, AForm const & i );

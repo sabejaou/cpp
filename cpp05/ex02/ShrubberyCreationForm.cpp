@@ -2,6 +2,11 @@
 #include "AForm.hpp"
 #include <fstream>
 
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm(145, 137, "ShrubberyCreationForm"){
+		this->target = "Default";
+		std::cout << "ShrubberyCreatForm Spawned!" << std::endl;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm(145, 137, "ShrubberyCreationForm"){
     	this->target = target.c_str();
 		std::cout << "ShrubberyCreatForm Spawned!" << std::endl;

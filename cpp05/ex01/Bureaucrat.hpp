@@ -9,6 +9,7 @@ class Bureaucrat{
 		int		grade;
     public:
         Bureaucrat(int grade, std::string name);
+		Bureaucrat::Bureaucrat();
         Bureaucrat(const Bureaucrat &cpy);
         Bureaucrat& operator=( const Bureaucrat &inst );
         ~Bureaucrat();
@@ -32,5 +33,6 @@ class Bureaucrat{
 		private:
 			std::string msg;
 		};	
-	friend std::ostream & operator<<(std::ostream & o, Bureaucrat const & i );
 };
+
+std::ostream & operator<<(std::ostream & o, Bureaucrat const & i );

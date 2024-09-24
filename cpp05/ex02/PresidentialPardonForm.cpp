@@ -2,6 +2,11 @@
 #include "AForm.hpp"
 #include <cmath>
 
+PresidentialPardonForm::PresidentialPardonForm(): AForm(72, 45, "PresidentialPardonForm"){
+	this->target = "Default Target";
+	std::cout << "PresPardonForm Spawned !" << std::endl;
+}
+
 PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm(72, 45, "PresidentialPardonForm"){
     	this->target = target.c_str();
 		std::cout << "PresPardonForm Spawned !" << std::endl;
