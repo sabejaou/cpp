@@ -13,5 +13,5 @@ class Intern {
         AForm *create(std::string target);
 		AForm *creates(std::string target);
 		AForm *creater(std::string target);
-	friend std::ostream & operator<<(std::ostream & o, Intern const & i );
 };
+std::ostream & operator<<(std::ostream & o, Intern const & i );

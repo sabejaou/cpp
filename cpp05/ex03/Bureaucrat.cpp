@@ -3,6 +3,12 @@
 #include <fstream>
 #include <iostream>
 
+Bureaucrat::Bureaucrat(){
+	this->name = "Default";
+	this->grade = 150;
+	std::cout << "Default Bureaucrat Spawned !" << std::endl;
+}
+
 Bureaucrat::Bureaucrat(int grade, std::string name){
 	if (grade > 150)
 		throw(GradeTooLowException());

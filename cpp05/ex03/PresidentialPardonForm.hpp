@@ -6,10 +6,11 @@
 
 class PresidentialPardonForm : public AForm{
     public:
+		PresidentialPardonForm();
         PresidentialPardonForm(std::string target);
         PresidentialPardonForm(const PresidentialPardonForm &cpy);
         PresidentialPardonForm& operator=( const PresidentialPardonForm &inst );
         ~PresidentialPardonForm();
 		void	execute(Bureaucrat const & exec) const;
-	friend std::ostream & operator<<(std::ostream & o, PresidentialPardonForm const & i );
 };
+std::ostream & operator<<(std::ostream & o, PresidentialPardonForm const & i );
