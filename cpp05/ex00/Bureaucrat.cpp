@@ -1,5 +1,10 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(){
+	this->name = "default";
+	this->grade = 150;
+}
+
 Bureaucrat::Bureaucrat(int grade, std::string name){
 	if (grade > 150)
 		throw(GradeTooLowException());
